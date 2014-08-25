@@ -1,0 +1,23 @@
+import(Rcpp)
+import(foreach)
+import(raster)
+import(methods)
+exportClasses(EotStack, EotMode)
+exportMethods(eot, nXplain, names, nmodes, plot, subset, writeEot)
+export(EotCycle)
+export(anomalize)
+export(calcVar)
+export(covWeight)
+export(cutStack)
+export(deg2rad)
+export(denoise)
+export(deseason)
+export(geoWeight)
+export(getWeights)
+export(lagalize)
+useDynLib(remote)
+#exportPattern("^[[:alpha:]]+")
+
+
+
+

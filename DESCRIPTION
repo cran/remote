@@ -1,11 +1,12 @@
 Package: remote
 Type: Package
 Title: Empirical Orthogonal Teleconnections in R
-Version: 0.3.0
-Date: 2014-08-25
+Version: 1.0.0
+Date: 2015-06-12
 Author: Tim Appelhans, Florian Detsch, Thomas Nauss
 Maintainer: Tim Appelhans <tim.appelhans@gmail.com>
 Description: 
+    Empirical orthogonal teleconnections in R.
     'remote' is short for "R(-based) EMpirical Orthogonal TEleconnections".
     It implements a collection of functions to facilitate empirical 
     orthogonal teleconnection analysis. Empirical Orthogonal Teleconnections 
@@ -19,7 +20,7 @@ License: GPL (>= 3) | file LICENSE
 Depends: R (>= 2.10), Rcpp (>= 0.10.3), raster, foreach, methods
 Suggests: maps, lattice, latticeExtra, grid, gridExtra, sp
 LinkingTo: Rcpp
-Packaged: 2014-08-25 09:55:01 UTC; ede
 NeedsCompilation: yes
+Packaged: 2015-06-12 08:44:00 UTC; ede
 Repository: CRAN
-Date/Publication: 2014-08-25 16:03:36
+Date/Publication: 2015-06-12 10:57:48

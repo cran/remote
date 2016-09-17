@@ -1,9 +1,9 @@
-0080ab5e0f149c2cabd42097ed1f4f27 *DESCRIPTION
+e17b6ee681b8edff336496e1a357a638 *DESCRIPTION
 4ddd17b0c9241d7b24a4960caefe8e40 *LICENSE
 406c883f56d5773badaa827bb64d5445 *NAMESPACE
 d2549728f03fb5e6ef913e11989cfe18 *R/AAAremoteClasses.R
 d857279bd21017eecce847bc54f6db5e *R/EotCycle.R
-060c143c459a0c8d8d96aab4e80e04cc *R/RcppExports.R
+4f2246735a05315adce9e80993ee97e4 *R/RcppExports.R
 9095f5b7133f645ceaa2074ffcf3670c *R/anomalize.R
 b44b996d6df886243e1b59b7d3b014ba *R/calcVar.R
 c02a9d51ea5ed50b1e7f86bf30cf7ebb *R/covWeight.R
@@ -26,11 +26,11 @@ f2f73e45fe766d99628119277a1939ec *R/remote-package.R
 4c7ae9937cc2603358aff51b889fe063 *R/show.R
 e0f5c3e95455f339785184757dd32354 *R/subset.R
 2727ba29d3dce76de70628b2c781c3e8 *R/writeEot.R
-fbc6af3ebab8350d24c3fa5690b8fc1c *README.md
-5c4cd5fa59132c0ce1cd1743bbbc0033 *data/australiaGPCP.RData
+b39d1ee5f9268438f52c0f2647999b9c *README.md
+ed7a7bd52454e09f96b23f2ca2c736ed *data/australiaGPCP.RData
 f9b8cc4cef1bfe96080553038ff6daf0 *data/datalist
-8d2634ed3278734270fb22b5553a09e1 *data/pacificSST.RData
-57616f481bd7a223de61d74236e53644 *data/vdendool.RData
+14e68d2ee156d1528da865d179aa23f7 *data/pacificSST.RData
+b1c4b3b5b7b8538ed2051d7e834b3c00 *data/vdendool.RData
 f2e065a958aa696f15df0a8f936aab2d *inst/CITATION
 31e8c6f31ec9bf60c49b8be1bc18817e *man/EotCycle.Rd
 ec74ebf3b2b75759daadce29321e7161 *man/EotMode-class.Rd
@@ -61,6 +61,4 @@ e195f2bce5a7ddd760a90c6aa1fa796b *man/subset.Rd
 92e8c6fa5c0cf09d704ce3c38e4d6767 *src/EotCppFun.cpp
 b3f86c20b81b51f5162874977d38784d *src/Makevars
 73505498722ad4b07b0ddb3067e92523 *src/Makevars.win
-80408995b6413f16f8228a472fd6e0f0 *src/RcppExports.cpp
-8963bdc8402620fc7fbd436b215aaf69 *vignettes/denoise.md
-af9e9b6aa13e1a9e73a17595f0d89fc9 *vignettes/deseason.md
+b446c85f4d1100ad670fd4dda88d8656 *src/RcppExports.cpp

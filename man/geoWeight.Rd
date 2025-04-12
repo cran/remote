@@ -19,7 +19,7 @@ a weighted Raster* object
 }
 \description{
 The function performs geographic weighting of non-projected long/lat
-data. By default it uses the cosine of latitude to compensate for the 
+data. By default it uses the cosine of latitude to compensate for the
 area distortion, though the user can supply other functions via \code{f}.
 }
 \examples{
@@ -32,4 +32,3 @@ plot(vdendool[[1]], main = "original")
 plot(wgtd[[1]], main = "weighted")
 par(opar)
 }
-

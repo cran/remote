@@ -4,24 +4,25 @@
 #' EotCycle() calculates a single EOT and is controlled by the main eot() function
 #' 
 #' @param x a ratser stack used as predictor
-#' @param y a RasterStack used as response. If \code{y} is \code{NULL},
+#' @param y a RasterStack used as response. If \code{y} is `NULL`,
 #' \code{x} is used as \code{y}
 #' @param n the number of EOT modes to calculate
-#' @param standardised logical. If \code{FALSE} the calculated r-squared values 
+#' @param standardised logical. If `FALSE` the calculated r-squared values 
 #' will be multiplied by the variance
 #' @param orig.var original variance of the response domain
-#' @param write.out logical. If \code{TRUE} results will be written to disk 
+#' @param write.out logical. If `TRUE` results will be written to disk 
 #' using \code{path.out}
-#' @param path.out the file path for writing results if \code{write.out} is \code{TRUE}.
+#' @param path.out the file path for writing results if \code{write.out} is `TRUE`.
 #' Defaults to current working directory
 #' @param prefix optional prefix to be used for naming of results if 
-#' \code{write.out} is \code{TRUE}
+#' \code{write.out} is `TRUE`
 #' @param type the type of the link function. Defaults to \code{'rsq'} as in original
 #' proposed method from \cite{Dool2000}. If set to \code{'ioa'} index of agreement is
 #' used instead
-#' @param verbose logical. If \code{TRUE} some details about the 
+#' @param verbose logical. If `TRUE` some details about the 
 #' calculation process will be output to the console
-#' @param ... not used at the moment
+#' @param ... If \code{write.out = TRUE}, further arguments passed to 
+#' [writeEot()].
 #' 
 #' @export EotCycle
 EotCycle <- function(x, 
@@ -209,13 +210,15 @@ EotCycle <- function(x,
                                                sep = "_"),
                                      cum.expl.var,
                                      if (length(maxxy.all) != 1) 
-                                       "ambiguous" else "ok"),
+                                       "ambiguous" else "ok", 
+                                     maxxy),
                                stringsAsFactors = FALSE)
-  names(location.df) <- c("x", "y", "mode", "cum_expl_var", "comment")
+  names(location.df) <- c("x", "y", "mode", "cum_expl_var", "comment", "cell_bp")
   mode(location.df$x) <- "numeric"
   mode(location.df$y) <- "numeric"
   mode(location.df$cum_expl_var) <- "numeric"
-    
+  mode(location.df$cell_bp) <- "integer"
+  
     ### Output
     
     # Output returned by function
@@ -259,7 +262,7 @@ EotCycle <- function(x,
       rm(list = c("eot.ts",
                   "maxxy",
                   "location.df",
-                  "expl.var",
+                  # "expl.var",
                   "rst.x.r",
                   "rst.x.rsq",
                   "rst.x.rsq.sums",

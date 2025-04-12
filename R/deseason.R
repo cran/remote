@@ -9,21 +9,22 @@ if ( !isGeneric("deseason") ) {
 #' suitable seasonal window. E. g. to create monthly anomalies of a 
 #' raster stack of 12 layers per year, use \code{cycle.window = 12}.
 #' 
-#' @param x An object of class 'RasterStack' (or 'RasterBrick') or, 
-#' alternatively, a 'numeric' time series.
-#' @param cycle.window Integer. The window for the creation of the anomalies.
-#' @param use.cpp Logical. Determines whether or not to use \strong{Rcpp} 
-#' functionality, defaults to \code{TRUE}. Only applies if \code{x} is a 
-#' 'RasterStack' (or 'RasterBrick') object.
-#' @param filename \code{character}. Output filename (optional).
-#' @param ... Additional arguments passed on to \code{\link{writeRaster}}, only 
+#' @param x An `Raster*` object or, alternatively, a `numeric` time 
+#' series.
+#' @param cycle.window `integer`, defaults to \code{12}. The window for the 
+#' creation of the anomalies.
+#' @param use.cpp `logical`, defaults to `FALSE`. Determines whether 
+#' or not to use \strong{Rcpp} functionality. Only applies if \code{x} is a 
+#' `Raster*` object.
+#' @param filename `character`. Output filename (optional).
+#' @param ... Additional arguments passed on to [raster::writeRaster()], only 
 #' considered if \code{filename} is specified.
 #' 
-#' @return If \code{x} is a 'RasterStack' (or 'RasterBrick') object, a 
-#' deseasoned 'RasterStack'; else a deseasoned 'numeric' vector.
+#' @return If \code{x} is a `Raster*` object, a deseasoned 
+#' \code{RasterStack}; else a deseasoned `numeric` vector.
 #' 
 #' @seealso
-#' \code{\link{anomalize}}, \code{\link{denoise}}
+#' [anomalize()], [denoise()]
 #' 
 #' @export deseason
 #' @name deseason
@@ -62,7 +63,8 @@ setMethod("deseason",
             } else {
               # Calculate layer averages based on supplied seasonal window
               x_mv <- raster::stack(rep(lapply(1:cycle.window, function(i) {
-                raster::calc(x[[seq(i, raster::nlayers(x), cycle.window)]], fun = mean)
+                raster::calc(x[[seq(i, raster::nlayers(x), cycle.window)]], 
+                             fun = mean, na.rm = TRUE)
               }), raster::nlayers(x) / cycle.window))
             }
             
